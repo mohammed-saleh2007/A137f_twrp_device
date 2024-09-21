@@ -116,7 +116,7 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 99.87.36
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := 0_SudoBomb
+TW_DEVICE_VERSION := 0_mohamed_linux
 TW_THEME := portrait_hdpi
 TW_NO_SCREEN_TIMEOUT := true
 TW_SCREEN_BLANK_ON_BOOT := true
