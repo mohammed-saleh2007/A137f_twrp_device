@@ -116,7 +116,7 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 99.87.36
 
 # TWRP specific build flags
-TW_DEVICE_VERSION := 0_mohamed_linux
+TW_DEVICE_VERSION := 0_MohammedSaleh
 TW_THEME := portrait_hdpi
 TW_NO_SCREEN_TIMEOUT := true
 TW_SCREEN_BLANK_ON_BOOT := true
@@ -140,6 +140,18 @@ TW_EXCLUDE_APEX := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_RESETPROP := true
 #TW_ENABLE_FS_COMPRESSION := true
+
+# compress ramdisk lzma 
+#BOARD_RAMDISK_USE_LZMA := true
+#LZMA_RAMDISK_TARGETS := recovery
+
+# SuperSU not included
+TW_EXCLUDE_SUPERSU := true
+
+# XZ will give better compression but if it fails, switch to LZMA
+BOARD_RAMDISK_USE_XZ := true
+
+
 BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_INCLUDE_REPACKTOOLS := true
