@@ -49,7 +49,7 @@ BOARD_KERNEL_TAGS_OFFSET := 0x0bc08000
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_KERNEL_CONFIG := a13ve_defconfig
@@ -58,7 +58,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/a13ve
 # Kernel - prebuilt
 TARGET_FORCE_PREBUILT_KERNEL := true
 ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz #thanks to physwizz
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_INCLUDE_DTB_IN_BOOTIMG := 
@@ -142,14 +142,13 @@ TW_INCLUDE_RESETPROP := true
 #TW_ENABLE_FS_COMPRESSION := true
 
 # compress ramdisk lzma 
-#BOARD_RAMDISK_USE_LZMA := true
-#LZMA_RAMDISK_TARGETS := recovery
+BOARD_RAMDISK_USE_LZMA := true
+LZMA_RAMDISK_TARGETS := recovery #thanks to physwizz
 
 # SuperSU not included
 TW_EXCLUDE_SUPERSU := true
-
 # XZ will give better compression but if it fails, switch to LZMA
-BOARD_RAMDISK_USE_XZ := true
+# BOARD_RAMDISK_USE_XZ := true #thanks to ThangsNguyen
 
 
 BOARD_HAS_NO_REAL_SDCARD := true
