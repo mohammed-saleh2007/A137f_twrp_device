@@ -5,7 +5,7 @@ ro.display.series=Samsung Galaxy A13
 ro.boot.dynamic_partitions=true
 
 # product/board stuff
-ro.product.board=mt6768
+ro.product.board=a13vee
 ro.board.platform=mt6768
 
 # Boot devices
