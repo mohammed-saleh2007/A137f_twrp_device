@@ -8,7 +8,5 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_a13ve.mk
 
-COMMON_LUNCH_CHOICES := \
-    twrp_a13ve-user \
-    twrp_a13ve-userdebug \
-    twrp_a13ve-eng
+COMMON_LUNCH_CHOICES := twrp_a13ve-userdebug 
+
